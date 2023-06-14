@@ -1,3 +1,4 @@
+import { SupportBtn } from './components/pure/support';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
@@ -25,7 +26,11 @@ export default function RootLayout({
       <head>
         <title>Ticketera</title>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className + 'min-h-screen'}>
+        <header></header>
+        {children}
+        <SupportBtn />
+      </body>
     </html>
   );
 }
