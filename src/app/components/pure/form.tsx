@@ -23,7 +23,9 @@ export const SingleForm: React.FC<FormProps> = ({
         placeholder={placeholder}
         name={name}
       />
-      <span>{helper}</span>
+      <span className={error ? 'text-red-500' : 'text-slate-400'}>
+        {helper}
+      </span>
     </>
   );
 };
