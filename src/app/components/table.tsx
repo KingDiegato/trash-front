@@ -30,18 +30,23 @@ export const AppTable: React.FC<AppTableProps> = ({
         <thead>
           <tr>
             {tableItems.map((title) => (
-              <th key={title + crypto.randomUUID()}>{title}</th>
+              <th className="text-lg" key={title + crypto.randomUUID()}>
+                {title}
+              </th>
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="max-h-[400px] overflow-auto">
           {tableData.map((arr) => (
             <tr
               className="text-center items-center"
               key={arr + crypto.randomUUID()}
             >
               {arr.map((data: any) => (
-                <td key={data + crypto.randomUUID()}>{data}</td>
+                <td key={data + crypto.randomUUID()} className="p-2">
+                  {data}
+                  <hr />
+                </td>
               ))}
             </tr>
           ))}
