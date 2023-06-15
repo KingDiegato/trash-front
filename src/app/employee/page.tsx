@@ -8,7 +8,7 @@ export default function Employee() {
         <TactilBtn
           src="https://www.lincoln.ne.gov/files/sharedassets/public/parks-amp-rec/parks-amp-facilities/parks/antelope/lpr-park-antplay2.jpg?w=1080"
           btnName="Juegos"
-          href="/employee/consulta-juegos"
+          href="/employee/consulta-juego"
         />
         <TactilBtn src="" btnName="Facturar" href="/" />
       </div>
