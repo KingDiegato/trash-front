@@ -1,5 +1,8 @@
+'use client';
+
 import { ActionButton } from './pure/button';
 import { SingleForm } from './pure/form';
+import ShortForm from './shortForm';
 
 interface AppTableProps {
   tableItems: string[];
@@ -11,47 +14,31 @@ export const AppTable: React.FC<AppTableProps> = ({
   tableData = []
 }) => {
   return (
-    <section className="flex flex-col p-10">
-      <form id="consult-games-id" className="mb-4">
-        <div className="flex gap-10">
-          <ActionButton>Añadir</ActionButton>
-          <div className="w-full">
-            <SingleForm
-              name="filter"
-              placeholder="Placeholder"
-              type="text"
-              error={false}
-            />
-          </div>
-          <ActionButton>Buscar</ActionButton>
-        </div>
-      </form>
-      <table className="w-full bg-white p-10">
-        <thead>
-          <tr>
-            {tableItems.map((title) => (
-              <th className="text-lg" key={title + crypto.randomUUID()}>
-                {title}
-              </th>
+    <table className="w-full bg-white p-10">
+      <thead>
+        <tr>
+          {tableItems.map((title) => (
+            <th className="text-lg" key={title + crypto.randomUUID()}>
+              {title}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody className="max-h-[400px] overflow-auto">
+        {tableData.map((arr) => (
+          <tr
+            className="text-center items-center"
+            key={arr + crypto.randomUUID()}
+          >
+            {arr.map((data: any) => (
+              <td key={data + crypto.randomUUID()} className="p-2">
+                {data}
+                <hr />
+              </td>
             ))}
           </tr>
-        </thead>
-        <tbody className="max-h-[400px] overflow-auto">
-          {tableData.map((arr) => (
-            <tr
-              className="text-center items-center"
-              key={arr + crypto.randomUUID()}
-            >
-              {arr.map((data: any) => (
-                <td key={data + crypto.randomUUID()} className="p-2">
-                  {data}
-                  <hr />
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </section>
+        ))}
+      </tbody>
+    </table>
   );
 };
