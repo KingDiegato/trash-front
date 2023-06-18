@@ -10,7 +10,7 @@ export default function Employee() {
           btnName="Juegos"
           href="/employee/consulta-juego"
         />
-        <TactilBtn src="" btnName="Facturar" href="/" />
+        <TactilBtn src="" btnName="Facturar" href="/employee/facturar" />
       </div>
     </div>
   );
