@@ -28,7 +28,7 @@ export default function RootLayout({
       <head>
         <title>Ticketera</title>
       </head>
-      <body className={inter.className + 'min-h-screen'}>
+      <body className={inter.className + ' min-h-screen'}>
         <header className="flex justify-between p-10">
           <ServerStatus />
           <UserView />

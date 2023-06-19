@@ -5,13 +5,14 @@ export const Merchandise = () => {
   return (
     <>
       <div className="flex justify-around bg-white border">
-        <ActionButton>Children</ActionButton>
-        <ActionButton>Children</ActionButton>
-        <ActionButton>Children</ActionButton>
-        <ActionButton>Children</ActionButton>
+        <ActionButton>Merch</ActionButton>
+        <ActionButton>Comida</ActionButton>
+        <ActionButton>Tickets</ActionButton>
+        <ActionButton>Juguetes</ActionButton>
       </div>
       <div className="bg-white h-full border overflow-auto">
         <div className="flex flex-col pt-2">
+          {/* TODO: Create it as a map */}
           <ProductTile
             name="shirt"
             description={'blue shirt'}

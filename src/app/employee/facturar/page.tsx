@@ -1,6 +1,9 @@
+import { Bill } from '@/app/components/bill';
 import { Merchandise } from '@/app/components/merchandise';
+import { ActionButton } from '@/app/components/pure/button';
 import { SingleForm } from '@/app/components/pure/form';
 import { AppTable } from '@/app/components/table';
+import { UserCard } from '@/app/components/userCard';
 import Link from 'next/link';
 
 export default function Facturar() {
@@ -37,16 +40,61 @@ export default function Facturar() {
               <Merchandise />
             </div>
           </div>
-          <aside className="w-1/3">
-            <SingleForm
-              type="text"
-              placeholder="Apellido"
-              name="apellido"
-              error={false}
-            />
+          <aside className="flex flex-col w-1/3 h-600 bg-white items-center">
+            <h2 className="text-3xl">Factura</h2>
+            <Bill items={itemsInCart} />
+            <div className="flex ">
+              <SingleForm
+                error={false}
+                type="text"
+                placeholder="123123123"
+                name="cardID"
+              />
+              <span className="text-4xl">{'>'}</span>
+            </div>
+            <UserCard clientName="john" clientLastName="doe" />
+            <div>
+              <ActionButton>Limpiar</ActionButton>
+              <ActionButton>Confirmar</ActionButton>
+            </div>
           </aside>
         </section>
       </div>
     </>
   );
 }
+
+const itemsInCart = [
+  {
+    name: 'shirt',
+    description: 'blue shirt',
+    price: 100,
+    quantity: 1,
+    image:
+      'https://www.lincoln.ne.gov/files/sharedassets/public/parks-amp-rec/parks-amp-facilities/parks/antelope/lpr-park-antplay2.jpg?w=1080'
+  },
+  {
+    name: 'shirt',
+    description: 'blue shirt',
+    price: 100,
+    quantity: 1,
+    image:
+      'https://www.lincoln.ne.gov/files/sharedassets/public/parks-amp-rec/parks-amp-facilities/parks/antelope/lpr-park-antplay2.jpg?w=1080'
+  },
+  {
+    name: 'shirt',
+    description: 'blue shirt',
+    price: 100,
+    quantity: 1,
+    image:
+      'https://www.lincoln.ne.gov/files/sharedassets/public/parks-amp-rec/parks-amp-facilities/parks/antelope/lpr-park-antplay2.jpg?w=1080'
+  },
+  {
+    name: 'shirt',
+    description: 'blue shirt',
+    price: 100,
+    quantity: 1,
+    image:
+      'https://www.lincoln.ne.gov/files/sharedassets/public/parks-amp-rec/parks-amp-facilities/parks/antelope/lpr-park-antplay2.jpg?w=1080'
+  }
+];
