@@ -1,4 +1,7 @@
-import './globals.css';
+import { ServerStatus } from '../components/pure/serverStatus';
+import { SupportBtn } from '../components/pure/support';
+import { UserView } from '../components/pure/userView';
+import '../globals.css';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -25,7 +28,14 @@ export default function RootLayout({
       <head>
         <title>Ticketera</title>
       </head>
-      <body className={inter.className + ' min-h-screen'}>{children}</body>
+      <body className={inter.className + ' min-h-screen'}>
+        <header className="flex justify-between p-10">
+          <ServerStatus />
+          <UserView />
+        </header>
+        {children}
+        <SupportBtn />
+      </body>
     </html>
   );
 }
