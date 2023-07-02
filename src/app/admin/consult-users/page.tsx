@@ -5,7 +5,6 @@ import { Modal } from '@/app/components/modal';
 import { MultipleForm } from '@/app/components/multipleForm';
 import { ActionButton } from '@/app/components/pure/button';
 import ShortForm from '@/app/components/shortForm';
-import { AppTable } from '@/app/components/table';
 import Link from 'next/link';
 import { useState } from 'react';
 

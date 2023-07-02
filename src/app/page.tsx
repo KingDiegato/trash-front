@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import './globals.css';
 import Image from 'next/image';
-import { useEffect } from 'react';
 
 export default function MainPage() {
   const handleClick = () => {
