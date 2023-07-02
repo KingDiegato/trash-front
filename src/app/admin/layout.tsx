@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { ServerStatus } from '../components/pure/serverStatus';
 import { SupportBtn } from '../components/pure/support';
 import { UserView } from '../components/pure/userView';
@@ -26,10 +25,10 @@ export default function AdminLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <title>Ticketera</title>
-      </Head>
-      <body className={'min-h-screen'}>
+      </head>
+      <body className={inter.className + ' min-h-screen'}>
         <header className="flex justify-between p-10">
           <ServerStatus />
           <UserView />
