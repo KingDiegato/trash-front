@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
@@ -22,10 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <title>Ticketera</title>
-      </head>
-      <body className={inter.className + ' min-h-screen'}>{children}</body>
+      </Head>
+      <body className={'min-h-screen'}>{children}</body>
     </html>
   );
 }

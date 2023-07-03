@@ -1,8 +1,6 @@
 'use client';
 
 import { ActionButton } from './pure/button';
-import { SingleForm } from './pure/form';
-import ShortForm from './shortForm';
 
 interface AppTableProps {
   tableItems: string[];
@@ -36,6 +34,10 @@ export const AppTable: React.FC<AppTableProps> = ({
                 <hr />
               </td>
             ))}
+            <td>
+              <ActionButton>Editar</ActionButton>
+              <ActionButton>Eliminar</ActionButton>
+            </td>
           </tr>
         ))}
       </tbody>

@@ -4,16 +4,20 @@ interface FormProps {
   name: string;
   helper?: string;
   error: boolean;
+  label: string;
+  required?: boolean;
 }
 export const SingleForm: React.FC<FormProps> = ({
   type,
   placeholder,
   name,
   helper = '',
-  error = false
+  error = false,
+  label
 }) => {
   return (
     <>
+      <label className="flex px-2">{label}</label>
       <input
         className={`h-10 w-full p-2 border-b-2 active:border-0 ${
           error ? 'placeholder:text-red-500' : 'placeholder:text-slate-400'
@@ -22,6 +26,7 @@ export const SingleForm: React.FC<FormProps> = ({
         type={type}
         placeholder={placeholder}
         name={name}
+        required
       />
       <span className={error ? 'text-red-500' : 'text-slate-400'}>
         {helper}

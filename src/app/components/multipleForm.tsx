@@ -10,14 +10,16 @@ interface ListOfForms {
   type: string;
   placeholder: string;
   error: boolean;
+  label: string;
 }
-export const MultipleForm: React.FC<MultipleFormProps> = ({ id, formList }) => {
+export const MultipleForm: React.FC<MultipleFormProps> = ({ formList }) => {
   return (
-    <form id={id}>
+    <>
       {(formList &&
         formList.map((form) => (
           <div key={form.name} className="py-2">
             <SingleForm
+              label={form.label}
               type={form.type}
               placeholder={form.placeholder}
               name={form.name}
@@ -26,12 +28,13 @@ export const MultipleForm: React.FC<MultipleFormProps> = ({ id, formList }) => {
           </div>
         ))) || (
         <SingleForm
+          label="Empty"
           type="text"
           placeholder="Placeholder"
           name="filter"
           error={false}
         />
       )}
-    </form>
+    </>
   );
 };

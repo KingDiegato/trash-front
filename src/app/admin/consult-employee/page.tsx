@@ -1,14 +1,13 @@
 'use client';
-import { Modal } from '@/app/components/modal';
-import { MultipleForm } from '@/app/components/multipleForm';
-import { ActionButton } from '@/app/components/pure/button';
 import ShortForm from '@/app/components/shortForm';
 import { AppTable } from '@/app/components/table';
 import Link from 'next/link';
+import NewEmployeeForm from './modals';
 import { useState } from 'react';
 
 export default function ConsultEmployeePage() {
   const [isVisible, setIsVisible] = useState(false);
+
   return (
     <>
       <Link className="text-blue-500 px-10" href="/employee">
@@ -20,16 +19,12 @@ export default function ConsultEmployeePage() {
           <ShortForm setOpen={setIsVisible} />
           <AppTable
             tableItems={['ID', 'Nombre', 'Tipo de empleado', 'Acciones']}
-            tableData={[[1, 'john', 'Empleado Juego', 12]]}
+            tableData={[
+              [1, 'john', 'Empleado Juego'],
+              [0, '', 'Empleado Administrativo']
+            ]}
           />
-          {isVisible && (
-            <>
-              <Modal isVisible={isVisible} onClose={() => setIsVisible(false)}>
-                <MultipleForm formList={[]} />
-                <ActionButton>Create</ActionButton>
-              </Modal>
-            </>
-          )}
+          <NewEmployeeForm setIsVisible={setIsVisible} isVisible={isVisible} />
         </section>
       </div>
     </>
