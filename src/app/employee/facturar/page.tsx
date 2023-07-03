@@ -17,8 +17,9 @@ export default function Facturar() {
         <section className="flex p-10 gap-6">
           <div className="w-2/3 h-[600px]">
             <SingleForm
+              label="Nombre"
               type="text"
-              placeholder="Nombre"
+              placeholder="john"
               name="nombre"
               error={false}
             />
@@ -45,6 +46,7 @@ export default function Facturar() {
             <Bill items={itemsInCart} />
             <div className="flex ">
               <SingleForm
+                label="Número de tarjeta"
                 error={false}
                 type="text"
                 placeholder="123123123"

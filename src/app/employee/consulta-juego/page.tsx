@@ -6,7 +6,7 @@ import { ActionButton } from '@/app/components/pure/button';
 import ShortForm from '@/app/components/shortForm';
 import { AppTable } from '@/app/components/table';
 import Link from 'next/link';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 const tableHeaderGames = ['ID', 'Nombre', 'Descripción', 'Precio'];
 const tableDataGames = [
@@ -18,6 +18,10 @@ const tableDataGames = [
 
 export default function ConsultGames() {
   const [isVisible, setIsVisible] = useState(false);
+
+  const handleGameSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
   return (
     <>
       <Link className="text-blue-500 px-10" href="/employee">
@@ -31,8 +35,10 @@ export default function ConsultGames() {
           {isVisible && (
             <>
               <Modal isVisible={isVisible} onClose={() => setIsVisible(false)}>
-                <MultipleForm formList={formMocks} />
-                <ActionButton>Create</ActionButton>
+                <form onSubmit={handleGameSubmit}>
+                  <MultipleForm formList={formMocks} />
+                  <ActionButton>Create</ActionButton>
+                </form>
               </Modal>
             </>
           )}
@@ -44,21 +50,10 @@ export default function ConsultGames() {
 
 const formMocks = [
   {
+    label: 'Nombre',
     name: 'input1',
     type: 'text',
     placeholder: 'ruleta...',
-    error: false
-  },
-  {
-    name: 'input2',
-    type: 'text',
-    placeholder: 'Dias disponibles: 5',
-    error: false
-  },
-  {
-    name: 'input3',
-    type: 'date',
-    placeholder: 'Precio',
     error: false
   }
 ];
