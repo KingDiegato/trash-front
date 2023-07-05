@@ -8,6 +8,7 @@ import ShortForm from '@/app/components/shortForm';
 import { AppTable } from '@/app/components/table';
 import Link from 'next/link';
 import { useState } from 'react';
+import { CreateUserModal } from './modals';
 
 export default function ConsultUsersPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,20 +22,13 @@ export default function ConsultUsersPage() {
         <section className="flex flex-col p-10">
           <ShortForm setOpen={setIsVisible} />
           <ActionTable
-            tableItems={['ID', 'Nombre', 'Registro', 'Tipo de empleado']}
+            tableItems={['ID', 'Nombre', 'Registro', 'Saldo']}
             tableData={[
-              [1, 'john doe', '15/6/2023', 'Empleado Juego'],
-              [2, 'john doe', '15/6/2023', 'Empleado Administrativo']
+              [1, 'john doe', '15/6/2023', 500],
+              [2, 'doe john', '15/6/2023', 200]
             ]}
           />
-          {isVisible && (
-            <>
-              <Modal isVisible={isVisible} onClose={() => setIsVisible(false)}>
-                <MultipleForm formList={[]} />
-                <ActionButton>Create</ActionButton>
-              </Modal>
-            </>
-          )}
+          <CreateUserModal setIsVisible={setIsVisible} isVisible={isVisible} />
         </section>
       </div>
     </>

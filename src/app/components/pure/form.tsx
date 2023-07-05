@@ -1,11 +1,11 @@
 interface FormProps {
   type: string;
-  placeholder: string;
+  placeholder?: string;
   name: string;
   helper?: string;
   error: boolean;
   label: string;
-  required?: boolean;
+  req?: boolean;
 }
 export const SingleForm: React.FC<FormProps> = ({
   type,
@@ -13,7 +13,8 @@ export const SingleForm: React.FC<FormProps> = ({
   name,
   helper = '',
   error = false,
-  label
+  label,
+  req = true
 }) => {
   return (
     <>
@@ -26,7 +27,7 @@ export const SingleForm: React.FC<FormProps> = ({
         type={type}
         placeholder={placeholder}
         name={name}
-        required
+        required={req}
       />
       <span className={error ? 'text-red-500' : 'text-slate-400'}>
         {helper}

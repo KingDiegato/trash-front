@@ -14,19 +14,7 @@ export default function NewEmployeeForm({ isVisible, setIsVisible }: any) {
 
     const getData = new FormData(e.target as HTMLFormElement);
 
-    function helper(formNames: string[]) {
-      return formNames.map((el: string) => getData.get(el));
-    }
-
-    const data = helper([
-      'usuario',
-      'nCompleto',
-      'email',
-      'dni',
-      'edad',
-      'telefono'
-    ]);
-
+    const data = Object.fromEntries(getData.entries());
     console.log(data);
   };
 
@@ -35,19 +23,7 @@ export default function NewEmployeeForm({ isVisible, setIsVisible }: any) {
 
     const getData = new FormData(e.target as HTMLFormElement);
 
-    function helper(formNames: string[]) {
-      return formNames.map((el: string) => getData.get(el));
-    }
-
-    const data = helper([
-      'usuario',
-      'nCompleto',
-      'email',
-      'dni',
-      'edad',
-      'telefono',
-      'jAsignado'
-    ]);
+    const data = Object.fromEntries(getData.entries());
 
     console.log(data);
   };

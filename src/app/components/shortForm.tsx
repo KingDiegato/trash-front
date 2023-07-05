@@ -23,10 +23,12 @@ export default function ShortForm({ setOpen }: FormProps) {
         </button>
         <div className="w-full">
           <SingleForm
+            label=""
             name="filter"
             placeholder="Placeholder"
             type="text"
             error={false}
+            req={false}
           />
         </div>
         <ActionButton>Buscar</ActionButton>

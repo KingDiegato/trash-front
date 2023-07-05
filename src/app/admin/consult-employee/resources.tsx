@@ -1,9 +1,9 @@
 export const adminForm = [
   {
-    label: 'Usuario',
-    name: 'usuario',
-    type: 'string',
-    placeholder: 'johnDoe',
+    label: 'Correo',
+    name: 'email',
+    type: 'email',
+    placeholder: 'johnDoe@gmail.com',
     error: false
   },
   {
@@ -14,10 +14,10 @@ export const adminForm = [
     error: false
   },
   {
-    label: 'Correo',
-    name: 'email',
-    type: 'email',
-    placeholder: 'johnDoe@gmail.com',
+    label: 'Fecha de Nacimiento',
+    name: 'birthday',
+    type: 'date',
+    placeholder: '',
     error: false
   },
   {
@@ -45,10 +45,10 @@ export const adminForm = [
 
 export const employeeForm = [
   {
-    label: 'Usuario',
-    name: 'usuario',
-    type: 'string',
-    placeholder: 'johnDoe',
+    label: 'Correo',
+    name: 'email',
+    type: 'email',
+    placeholder: 'johnDoe@gmail.com',
     error: false
   },
   {
@@ -59,10 +59,10 @@ export const employeeForm = [
     error: false
   },
   {
-    label: 'Correo',
-    name: 'email',
-    type: 'email',
-    placeholder: 'johnDoe@gmail.com',
+    label: 'Fecha de Nacimiento',
+    name: 'birthday',
+    type: 'date',
+    placeholder: '',
     error: false
   },
   {

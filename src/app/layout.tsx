@@ -23,9 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <title>Ticketera</title>
-      </Head>
+      </head>
       <body className={'min-h-screen'}>{children}</body>
     </html>
   );
